@@ -4,7 +4,6 @@ INVENV = . env/bin/activate ; export FLASK_DEBUG=1 ;
 # run the flask server
 run: install
 	#($(INVENV) python3 -m smtpd -n -c DebuggingServer localhost:1029)
-	($(INVENV) python3 src/ml/win_predictor.py)
 	($(INVENV) python3 src/application.py)&
 
 
