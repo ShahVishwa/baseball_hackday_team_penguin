@@ -1,0 +1,8 @@
+__pycache__/
+.iml
+misc.xml
+modules.xml
+workspace.xml
+ ../../../.idea/baseball_hackday_team_penguin.iml
+.idea
+env/
