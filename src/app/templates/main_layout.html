@@ -10,16 +10,16 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
 
     {% if title %}
-        <title>BBF - {{ title }}</title>
+        <title>Penguin - {{ title }}</title>
     {% else %}
-        <title>BBF</title>
+        <title>Penguin</title>
     {% endif %}
 </head>
 <body>
     <header class="site-header">
         <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
             <div class="container">
-                <a href="/" class="navbar-brand mr-4">BBF</a>
+                <a href="/" class="navbar-brand mr-4">Penguin</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -27,6 +27,8 @@
                     <div class="navbar-nav mr-auto">
                         <a href="{{ url_for('home') }}" class="nav-item nav-link">Home</a>
                         <a href="{{ url_for('about') }}" class="nav-item nav-link">About</a>
+                        <a href="{{ url_for('predictions') }}" class="nav-item nav-link">Predictions</a>
+
                     </div>
                     <!-- Navbar Right Side -->
                     <div class="navbar-nav">

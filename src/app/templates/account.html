@@ -1,6 +1,9 @@
 {% extends "main_layout.html" %}
 {% block main_content %}
-<div class="col-md-10 justify-content-center">
+
+<div class="col-md-6"></div>
+<div class="col-md-3"></div>
+<div class="col justify-content-center">
 <div class="content-section">
     <div class="media">
       <img class="rounded-circle account-img" src="{{ image_file }}">
@@ -13,9 +16,9 @@
         <img class="rounded-circle account-img"  src="{{ url_for('static', filename='baseball_10_badge.png') }}">
         <img class="rounded-circle account-img"  src="{{ url_for('static', filename='baseball_100_badge.png') }}">
         <img class="rounded-circle account-img"  src="{{ url_for('static', filename='baseball_1000_badge.png') }}">
+    </div> 
     </div>
-      
-    </div>
+
       <form method="POST" action="" enctype="multipart/form-data">
           {{ form.hidden_tag() }}
           <fieldset class="form-group">
