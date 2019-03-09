@@ -1,7 +1,84 @@
 {% extends "main_layout.html" %}
 {% block main_content %}
-    <div class="col-md-8 justify-content-center">
-        <h1>{{ current_user.username }}</h1>
-        {% block content %}{% endblock %}
+<div class="col-md-10 justify-content-center">
+<div class="content-section">
+    <div class="media">
+      <img class="rounded-circle account-img" src="{{ image_file }}">
+      <div class="media-body">
+        <h2 class="account-heading">{{ current_user.username }}</h2>
+        <p class="text-secondary">{{ current_user.email }}</p>
+      </div>
     </div>
+      <form method="POST" action="" enctype="multipart/form-data">
+          {{ form.hidden_tag() }}
+          <fieldset class="form-group">
+              <legend class="border-bottom mb-4">Current Predictions</legend>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Home Team</th>
+                    <th scope="col">Away Team</th>
+                    <th scope="col">Prediction</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">3/22/2019</th>
+                    <td>Padres</td>
+                    <td>Athletics</td>
+                    <td>4-2</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3/10/2019</th>
+                    <td>Angels</td>
+                    <td>White Sox</td>
+                    <td>1-5</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <legend class="border-bottom mb-4">Past Predictions</legend>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Home Team</th>
+                    <th scope="col">Away Team</th>
+                    <th scope="col">Prediction</th>
+                    <th scope="col">Result</th>
+                    <th scope="col">Points</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">3/6/2019</th>
+                        <td>Padres</td>
+                        <td>Reds</td>
+                        <td>5-2</td>
+                        <td>4-6</td>
+                        <td>30</td>
+                    </tr>
+                  <tr>
+                    <th scope="row">2/25/2019</th>
+                    <td>Padres</td>
+                    <td>Cubs</td>
+                    <td>4-2</td>
+                    <td>4-6</td>
+                    <td>50</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2/23/2019</th>
+                    <td>Cardinals</td>
+                    <td>Marlins</td>
+                    <td>5-2</td>
+                    <td>11-1</td>
+                    <td>80</td>
+                  </tr>
+                </tbody>
+              </table>
+          </fieldset>
+      </form>
+  </div>
+</div>
 {% endblock main_content %}
