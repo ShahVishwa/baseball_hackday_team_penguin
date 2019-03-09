@@ -1,0 +1,573 @@
+body {
+  margin: 0px;
+  font-family: Arial;
+}
+
+a {
+  color: #00B2B1;
+  text-decoration: none;
+}
+
+
+.clickable_link {
+  cursor: pointer;
+}
+.table-editable {
+  position: relative;
+  /*
+  .glyphicon {
+    font-size: 20px;
+  }
+  */
+
+}
+/*The following two styles are for making scrollbar visible on macOS
+* Sourced from: https://davidwalsh.name/osx-overflow
+*/
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, .5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+#account-area{
+  border: 2px;
+}
+.glyphicon{
+  font-weight: 600;
+
+}
+.glyphicon-remove:before {
+    content: "\e014";
+}
+
+.glyphicon-arrow-up:before {
+    content: "\e093";
+}
+
+.table-remove {
+  color: #700;
+  cursor: pointer;
+
+  &:hover {
+    color: #f00;
+  }
+}
+
+.table-up, .table-down {
+  color: #007;
+  cursor: pointer;
+
+  &:hover {
+    color: #00f;
+  }
+}
+
+.table-add {
+  color: #070;
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  right: 0;
+
+  &:hover {
+    color: #0b0;
+  }
+}
+
+
+.title-content h1{
+  text-align: center;
+  font-size: 28px;
+  color: #6a8595;
+}
+
+.collapsible:after {
+  padding-right: 10px;
+    content: url('/static/white-down-arrow.png');
+      /*content: '\002B';*/
+      color: white;
+      font-weight: bold;
+      float: right;
+      margin-left: 5px;
+      padding-top: 8px;
+      height: 24px;
+}
+
+
+.active:after {
+
+      content: url('/static/white-up-arrow.png');
+}
+
+.active:after path{
+  fill:white;
+}
+.product_entry{
+  list-style-type: none;
+  color: white;
+  cursor: pointer;
+}
+
+a.product_entry{
+  display: block;
+}
+li.product_entry{
+  background: #394851;
+
+}
+
+.Product_entry_txt{
+  padding-left: 10px;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+}
+a.Product_entry_txt{
+
+  display: block;
+}
+li.product_entry-open{
+  background: #f6986f;
+}
+li.product_entry:hover, li.product_entry_sub:hover {
+  background: #f3753f;
+}
+
+
+.Product_Selection_Table{
+  width: 265px;
+  border-spacing: 0px;
+
+}
+
+@media (max-width: 48em) {
+
+}
+
+
+
+#helpbar{
+  display: table-cell;
+  flex:1;
+  float:right;
+  min-width: 200px;
+  /*float:right;*/
+
+}
+.product_entry_sub{
+  background: #5f7786;
+}
+.Product_Selection_Table li, .Product_Selection_Table ul{
+  color: white;
+  text-align: left;
+  /*padding-top: 12px;*/
+  /*padding-bottom: 12px;*/
+  line-height: 40px;
+  text-decoration: none;
+  list-style: none;
+  padding-inline-start: 0px;
+  margin-block-start: 0em;
+  padding-left: 0px;
+}
+.delete_entry_button{
+    background:url(/static/white-x.png) no-repeat;
+    cursor:pointer;
+    border:none;
+    color: #FFF;
+    height:24px;
+    width: 24px;
+}
+
+.edit_entry_button{
+  background:url(/static/edit-icon.png) no-repeat;
+  cursor:pointer;
+  border:none;
+  color: #FFF;
+  height:24px;
+  width: 24px;
+}
+.collapsible{
+  color: white;
+  /*padding: 10px;*/
+  font-size:16px;
+  cursor: pointer;
+  background-color: #777;
+}
+.collapsible-content{
+  max-height: 0;
+  transition: max-height .7s ease-out;
+  overflow: hidden;
+}
+.modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      /*padding-top: 100px;*/ /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+      background-color: #fefefe;
+      /*margin: 15% auto;*/ /* 15% from the top and centered */
+      margin-left: 15%;
+      margin-right: 15%;
+      margin-top: 5%;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 70%; /* Could be more or less, depending on screen size */
+}
+
+.delete-table-modal-content {
+      background-color: #fefefe;
+      /*margin: 15% auto;*/ /* 15% from the top and centered */
+      margin-left: auto;
+      margin-right:auto;
+      margin-top: 5%;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 500px; /* Could be more or less, depending on screen size */
+}
+.sign-in-modal-content {
+      background-color: #fefefe;
+      /*margin: 15% auto;*/ /* 15% from the top and centered */
+      margin-left:auto;
+      margin-right:auto;
+      margin-top: 5%;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 350px; /* Could be more or less, depending on screen size */
+}
+
+.edit-entry-modal-content {
+      background-color: #fefefe;
+      /*margin: 15% auto;*/ /* 15% from the top and centered */
+      margin-left:auto;
+      margin-right:auto;
+      margin-top: 5%;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 450px; /* Could be more or less, depending on screen size */
+}
+
+.create-new-table-modal-content {
+  background-color: #fefefe;
+  /*margin: 15% auto;*/ /* 15% from the top and centered */
+  margin-left:auto;
+  margin-right:auto;
+  margin-top: 5%;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 350px; /* Could be more or less, depending on screen size */
+}
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+#inner {
+  padding-left:10px;
+  overflow: hidden;
+}
+.add_release_area{
+  padding-left:10px;
+  float: left;
+}
+.add_release_area label{
+  line-height: 19px;
+}
+.add_release_area h3{
+  text-align: center;
+}
+.content-container{
+  display: flex;
+  flex: 1 100%;
+  align-items: flex-end;
+}
+span.table-title {
+  text-align:center;
+  color: #556a77;
+  font-size:20px;
+}
+
+#content-matrix th{
+  height:20px;
+}
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+}
+#addareakey{
+  border: 2px solid black;
+}
+#table-textarea{
+  display: inline-table;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-top: 10px;
+  width:100%;
+  overflow: hidden;
+}
+
+#arrow_holder{
+  padding-top: 58px;
+}
+
+#arrow_holder img{
+  cursor: pointer;
+}
+.release-matrix{
+  /*padding-bottom: 100px;*/
+  /*padding-left: 100px;*/
+  table-layout: fixed;
+  border-collapse: collapse;
+  border: 3px solid orange;
+  overflow-x: scroll;
+  display: block;
+}
+.release-matrix th{
+  width: 200px;
+  background-color: #f48657;
+  text-align: left;
+  border: 2px solid black;
+}
+.release-matrix td{
+  white-space: pre;
+  height: 30px;
+  border: 2px solid black;
+  text-align: center;
+}
+
+.tdheader {
+  background-color: #f48657;
+  font-weight: bold;
+}
+
+#top-div{
+  width: 100%;
+  background-color: #b4c2cb;
+}
+#top-div img{
+  padding-top: 15px;
+  padding-left: 100px;
+  padding-bottom: 15px;
+}
+#content-left {
+  float:left;
+
+}
+
+@media (max-width: 65em){
+  #content-left {
+    width: 100%;
+  }
+  .Product_Selection_Table {
+    width:100%;
+  }
+}
+.clear { clear: both; }
+.content {
+  display: inline-block;
+}
+
+@media (min-width: 75em){
+  #content-matrix{
+
+    flex: 5;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-left: 10px;
+    border: 2px solid black;
+    padding-right: 10px;
+    max-width: 1300px;
+    width: -moz-calc(100% - 600px);
+    width: -webkit-calc(100% - 600px);
+    width: -o-calc(100% - 600px);
+    width: calc(100% - 600px);
+  }
+}
+@media (max-width: 75em){
+  #content-matrix{
+
+    flex: 5;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-left: 10px;
+    border: 2px solid black;
+    padding-right: 10px;
+    max-width: 1300px;
+    width: -moz-calc(100% - 600px);
+    width: -webkit-calc(100% - 600px);
+    width: -o-calc(100% - 600px);
+    width: calc(100% - 600px);
+  }
+}
+
+@media (max-width: 70em){
+  #content-matrix{
+
+    flex: 5;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 10px;
+    border: 2px solid black;
+    padding-right: 10px;
+    max-width: 1300px;
+    width: -moz-calc(100% - 600px);
+    width: -webkit-calc(100% - 600px);
+    width: -o-calc(100% - 600px);
+    width: calc(100% - 600px);
+  }
+}
+
+@media (max-width: 65em){
+  #content-matrix{
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    border: none;
+    padding-right: 0px;
+    width: 100%;
+  }
+}
+
+/*HELP BUTTON CSS BELOW:
+Sourced from: https://tutorialzine.com/2014/07/css-inline-help-tips*/
+
+.help-tip{
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    text-align: center;
+    background-color: #BCDBEA;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    line-height: 26px;
+    cursor: default;
+}
+
+.help-tip:before{
+    content:'?';
+    font-weight: bold;
+    color:#fff;
+}
+
+.help-tip:hover p{
+    display:block;
+    transform-origin: 100% 0%;
+
+    -webkit-animation: fadeIn 0.3s ease-in-out;
+    animation: fadeIn 0.3s ease-in-out;
+
+}
+
+.help-tip p{    /* The tooltip */
+    display: none;
+    text-align: left;
+    background-color: #1E2021;
+    padding: 20px;
+    width: 300px;
+    position: absolute;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    right: -4px;
+    color: #FFF;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.help-tip p:before{ /* The pointer of the tooltip */
+    position: absolute;
+    content: '';
+    width:0;
+    height: 0;
+    border:6px solid transparent;
+    border-bottom-color:#1E2021;
+    right:10px;
+    top:-12px;
+}
+
+.help-tip p:after{ /* Prevents the tooltip from being hidden */
+    width:100%;
+    height:40px;
+    content:'';
+    position: absolute;
+    top:-40px;
+    left:0;
+}
+
+/* CSS animation */
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity:0;
+        transform: scale(0.6);
+    }
+
+    100% {
+        opacity:100%;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    0% { opacity:0; }
+    100% { opacity:100%; }
+}
+
+textarea {
+  resize: none;
+}
+
+#fake-textarea {
+  -moz-appearance: textfield-multiline;
+  -webkit-appearance: textarea;
+  border: 1px solid gray;
+  font: medium -moz-fixed;
+  font: -webkit-small-control;
+  overflow: auto;
+  padding: 2px;
+  resize:none;
+  white-space: pre;
+  min-height: 28px;
+  font-size:12px;
+  margin-bottom: 10px;
+}
