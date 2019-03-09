@@ -7,21 +7,21 @@
 <div class="content-section">
     <div class="media">
       <img class="rounded-circle account-img" src="{{ url_for('static', filename='penguin_profile.jpg') }}">
-      
+
     <div class="col-md-3">
         <h2 class="account-heading">{{ current_user.username }}</h2>
         <p class="text-secondary">{{ current_user.email }}</p>
     </div>
     <div class="col-md-6">
-        <img class="rounded-circle account-img"  src="{{ url_for('static', filename='baseball_10_badge.png') }}">
+        <img class="rounded-circle account-img"  src="{{ url_for('static', filename='total_leader_badge.png') }}">
         <img class="rounded-circle account-img"  src="{{ url_for('static', filename='baseball_100_badge.png') }}">
         <img class="rounded-circle account-img"  src="{{ url_for('static', filename='baseball_1000_badge.png') }}">
-    </div> 
+    </div>
     <div class="col-md-2">
         <p class="text-secondary">Weekly # 1</p>
         <p class="text-secondary">Monthly # 10</p>
         <p class="text-secondary">Total # 104</p>
-    </div> 
+    </div>
     </div>
 
       <form method="POST" action="" enctype="multipart/form-data">
