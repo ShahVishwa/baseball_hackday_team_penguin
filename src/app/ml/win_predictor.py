@@ -17,7 +17,7 @@ from sklearn.svm import SVC
 
 
 # Load dataset
-url = "/Users/mg250074/Documents/pythontest/hackathon/baseball_hackday_team_penguin/src/app/ml/mlb.csv"
+url = "./mlb.csv"
 names = ['Win','Loss', 'Win Ratio','Team']
 dataset = pandas.read_csv(url, names=names)
 
@@ -42,13 +42,13 @@ array = dataset.values
 X = array[:,0:3]
 Y = array[:,3]
 validation_size = 0.30
-seed = 5
+seed = 4
 X_train, X_validation, Y_train, Y_validation = model_selection.train_test_split(X, Y, test_size=validation_size, random_state=seed)
 #Y_train=Y_train.astype('int')
 
 
 # Test options and evaluation metric
-seed = 5
+seed = 4
 scoring = 'accuracy'
 
 # Spot Check Algorithms
@@ -63,7 +63,7 @@ models.append(('KNN', KNeighborsClassifier()))
 results = []
 names = []
 for name, model in models:
-	kfold = model_selection.KFold(n_splits=2, random_state=seed)
+	kfold = model_selection.KFold(n_splits=4, random_state=seed)
 	cv_results = model_selection.cross_val_score(model, X_train, Y_train, cv=kfold, scoring=scoring)
 	results.append(cv_results)
 	names.append(name)
